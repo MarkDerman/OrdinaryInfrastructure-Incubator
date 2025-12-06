@@ -4,7 +4,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <PackageIcon>icon.png</PackageIcon>
-    <Description>
+    <Description>Exploring creating support for sending notifications on easily configurable "channels",
+      each of which could notify using any number of messaging option, for example: 
+      email, SMS, Whatsapp, pager, etc.
+
+      
       
     </Description>
   </PropertyGroup>
