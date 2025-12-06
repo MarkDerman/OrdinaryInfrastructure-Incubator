@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Email.SMTP", "Email\SM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.Notifications", "Notifications\Odin.Notifications.csproj", "{21F3C428-EF30-4FB9-8074-D8F3E710FB83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.DomainDesign.Primitives", "DomainDesign\Primitives\Odin.DomainDesign.Primitives.csproj", "{95D426A9-225F-41D0-98CF-EE7451B2AA43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin.DomainDesign.Infrastructure", "DomainDesign\Infrastructure\Odin.DomainDesign.Infrastructure.csproj", "{F5E9E7D1-6660-4B89-854B-3CEF7F82749E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +54,13 @@ Global
 		{21F3C428-EF30-4FB9-8074-D8F3E710FB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21F3C428-EF30-4FB9-8074-D8F3E710FB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21F3C428-EF30-4FB9-8074-D8F3E710FB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D426A9-225F-41D0-98CF-EE7451B2AA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D426A9-225F-41D0-98CF-EE7451B2AA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D426A9-225F-41D0-98CF-EE7451B2AA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D426A9-225F-41D0-98CF-EE7451B2AA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E9E7D1-6660-4B89-854B-3CEF7F82749E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E9E7D1-6660-4B89-854B-3CEF7F82749E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E9E7D1-6660-4B89-854B-3CEF7F82749E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E9E7D1-6660-4B89-854B-3CEF7F82749E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
