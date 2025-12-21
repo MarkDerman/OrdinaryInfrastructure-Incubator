@@ -21,8 +21,8 @@ namespace Odin.Notifications
         /// <param name="options"></param>
         public EmailNotifier(IEmailSender emailSender, EmailNotifierOptions options)
         {
-            PreCondition.RequiresNotNull(emailSender);
-            PreCondition.RequiresNotNull(options);
+            Precondition.RequiresNotNull(emailSender);
+            Precondition.RequiresNotNull(options);
             _emailSender = emailSender;
             _options = options;
         }
@@ -35,10 +35,10 @@ namespace Odin.Notifications
         /// <returns></returns>
         public async Task<Result> SendNotification(string subject, params object[] dataToSerialize)
         {
-            PreCondition.Requires<ArgumentNullException>(!string.IsNullOrWhiteSpace(subject),
+            Precondition.Requires<ArgumentNullException>(!string.IsNullOrWhiteSpace(subject),
                 $"{nameof(subject)} is required");
             List<EmailAddress> emails = _options.GetToEmails();
-            if (emails == null! || emails.Count==0) return Result.Fail($"{nameof(EmailNotifierOptions)} has no ToEmails configured.");
+            if (emails == null! || emails.Count==0) return Result.Failure($"{nameof(EmailNotifierOptions)} has no ToEmails configured.");
 
             EmailMessage email = new EmailMessage();
             if (!string.IsNullOrWhiteSpace(_options.FromEmail))
@@ -90,12 +90,12 @@ namespace Odin.Notifications
             try
             {
                 ResultValue<string?> sendResult = await _emailSender.SendEmail(email);
-                if (sendResult.Success) return Result.Succeed();
-                return Result.Fail($"EmailNotifier failed to send notification: {sendResult.MessagesToString()}");
+                if (sendResult.IsSuccess) return Result.Success();
+                return Result.Failure($"EmailNotifier failed to send notification: {sendResult.MessagesToString()}");
             }
             catch (Exception err)// swallow
             {
-                return Result.Fail($"EmailNotifier failed to send notification: {err.Message}");
+                return Result.Failure($"EmailNotifier failed to send notification: {err.Message}");
             }
         }
     }

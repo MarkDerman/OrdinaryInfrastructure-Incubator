@@ -31,16 +31,16 @@ namespace Odin.Cryptography
         /// <returns></returns>
         public ResultValue<string?> TryDecrypt(string protectedString)
         {
-            if (string.IsNullOrWhiteSpace(protectedString)) return ResultValue<string?>.Fail($"{nameof(protectedString)} is nullor empty");
+            if (string.IsNullOrWhiteSpace(protectedString)) return ResultValue<string?>.Failure($"{nameof(protectedString)} is nullor empty");
             try
             {
                 string decrypted = _protector.Unprotect(protectedString);
-                return ResultValue<string?>.Succeed(decrypted);
+                return ResultValue<string?>.Success(decrypted);
             }
             catch (Exception err)
             {
                 _logger.LogError($"{nameof(TryDecrypt)} error",err);
-                return ResultValue<string?>.Fail(err.Message);
+                return ResultValue<string?>.Failure(err.Message);
             }
         }
 
@@ -61,16 +61,16 @@ namespace Odin.Cryptography
         /// <returns></returns>
         public ResultValue<string?> TryEncrypt(string unProtectedString)
         {
-            if (string.IsNullOrWhiteSpace(unProtectedString)) return ResultValue<string?>.Fail($"{nameof(unProtectedString)} is null");
+            if (string.IsNullOrWhiteSpace(unProtectedString)) return ResultValue<string?>.Failure($"{nameof(unProtectedString)} is null");
             try
             {
                 string encrypted = _protector.Protect(unProtectedString);
-                return ResultValue<string?>.Succeed(encrypted);
+                return ResultValue<string?>.Success(encrypted);
             }
             catch (Exception err)
             {
                 _logger.LogError($"{nameof(TryEncrypt)} error",err);
-                return ResultValue<string?>.Fail(err.Message);
+                return ResultValue<string?>.Failure(err.Message);
             }
         }
 

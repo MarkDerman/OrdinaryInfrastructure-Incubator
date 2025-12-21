@@ -22,9 +22,9 @@ namespace Odin.Email
         public SmtpEmailSender(SmtpEmailSenderOptions smtpOptions,
             EmailSendingOptions emailSettings, ILoggerWrapper<SmtpEmailSender> logger)
         {
-            PreCondition.RequiresNotNull(smtpOptions);
-            PreCondition.RequiresNotNull(emailSettings);
-            PreCondition.RequiresNotNull(logger);
+            Precondition.RequiresNotNull(smtpOptions);
+            Precondition.RequiresNotNull(emailSettings);
+            Precondition.RequiresNotNull(logger);
             _smtpOptions = smtpOptions;
             _emailSettings = emailSettings;
             _logger = logger;

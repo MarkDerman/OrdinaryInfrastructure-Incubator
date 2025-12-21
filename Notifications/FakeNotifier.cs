@@ -15,7 +15,7 @@ namespace Odin.Notifications
         /// <returns></returns>
         public Task<Result> SendNotification(string subject, params object[] dataToSerialize)
         {
-            return Task.FromResult(Result.Succeed());
+            return Task.FromResult(Result.Success());
         }
     }
 }

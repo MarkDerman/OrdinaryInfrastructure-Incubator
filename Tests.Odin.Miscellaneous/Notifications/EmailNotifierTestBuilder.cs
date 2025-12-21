@@ -20,7 +20,7 @@ internal class EmailNotifierTestBuilder
     
     public EmailNotifierTestBuilder WithNotifierOptionsFromConfiguration(IConfiguration config)
     {
-        PreCondition.RequiresNotNull(config);
+        Precondition.RequiresNotNull(config);
         IConfigurationSection section = config.GetSection("Notifications-EmailNotifier");
         Options = new EmailNotifierOptions();
         section.Bind(Options);

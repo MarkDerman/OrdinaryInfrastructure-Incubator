@@ -14,7 +14,7 @@ namespace Odin.Passwords
         /// <returns></returns>
         public static string CreateSimpleWordAndNumberPassword(short numberofNumericDigits)
         {
-            PreCondition.Requires<ArgumentOutOfRangeException>(numberofNumericDigits >= 0);
+            Precondition.Requires<ArgumentOutOfRangeException>(numberofNumericDigits >= 0);
 
             string password = GetRandomShortWord();
             Random rnd = new Random();

@@ -26,7 +26,7 @@ namespace Microsoft.Extensions.DependencyInjection
             IConfigurationSection notificationsSection = configuration.GetSection(sectionName);
             notificationsSection.Bind(notificationSettings);
             Result notificationSettingsValidation = notificationSettings.IsConfigurationValid();
-            if (!notificationSettingsValidation.Success)
+            if (!notificationSettingsValidation.IsSuccess)
             {
                 throw new ApplicationException(
                     $"Invalid NotificationSettings in section {sectionName}. Errors are: {notificationSettingsValidation.MessagesToString()}");
@@ -40,7 +40,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 emailNotifierSection.Bind(emailNotificationOptions);
                 Result emailNotificationSettingsValid =
                     emailNotificationOptions.IsConfigurationValid();
-                if (!emailNotificationSettingsValid.Success)
+                if (!emailNotificationSettingsValid.IsSuccess)
                 {
                     throw new ApplicationException(
                         $"Invalid NotificationSettings in section {sectionName}. Errors are: {emailNotificationSettingsValid.MessagesToString()}");

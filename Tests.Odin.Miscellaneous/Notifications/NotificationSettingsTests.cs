@@ -24,7 +24,7 @@ namespace Tests.Odin.Notifications
             Result result = settings.IsConfigurationValid();
 
             // Assert
-            Assert.That(result.Success, Is.False, "Options validation should fail with no provider");
+            Assert.That(result.IsSuccess, Is.False, "Options validation should fail with no provider");
             Assert.That(result.Messages.Count, Is.EqualTo(1), "1 error is expected");
             Assert.That(result.Messages[0], Is.EqualTo("Notifications:Provider is not specified"), "Error message is incorrect");
         }
@@ -44,7 +44,7 @@ namespace Tests.Odin.Notifications
             Result result = settings.IsConfigurationValid();
 
             // Assert
-            Assert.That(result.Success, Is.EqualTo(shouldBeValid), $"IsValid should be {shouldBeValid}");
+            Assert.That(result.IsSuccess, Is.EqualTo(shouldBeValid), $"IsValid should be {shouldBeValid}");
             if (!shouldBeValid)
             {
                 Assert.That(result.Messages.Count, Is.EqualTo(1), "1 error is expected");

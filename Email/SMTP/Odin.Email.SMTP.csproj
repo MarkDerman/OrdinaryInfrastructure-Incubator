@@ -7,6 +7,7 @@
     <!-- <WarningsAsErrors>1591;1573;</WarningsAsErrors>  Not to be removed. Documentation is required. -->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Odin.Email" Version="0.4.13" />
+    <PackageReference Include="Odin.Email" Version="0.9.11" />
+    <PackageReference Include="Odin.Logging" Version="0.9.11" />
   </ItemGroup>
 </Project>

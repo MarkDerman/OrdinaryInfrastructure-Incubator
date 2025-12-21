@@ -29,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             Result configValidation = settings.IsConfigurationValid();
 
-            if (!configValidation.Success)
+            if (!configValidation.IsSuccess)
             {
                 throw new ApplicationException($"Invalid CryptographySettings in section {sectionName}. Errors are: {configValidation.MessagesToString()}");
             }

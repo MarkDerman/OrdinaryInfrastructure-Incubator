@@ -11,11 +11,11 @@ namespace Odin.Email
         public void TryAddEmailSender(IServiceCollection serviceCollection,
             IConfigurationSection emailConfigurationSection)
         {
-            PreCondition.RequiresNotNull(emailConfigurationSection);
+            Precondition.RequiresNotNull(emailConfigurationSection);
             SmtpEmailSenderOptions smtpOptions = new SmtpEmailSenderOptions();
             emailConfigurationSection.Bind(SmtpEmailSenderOptions.SmtpName, smtpOptions);
             Result validationResult = smtpOptions.IsConfigurationValid();
-            if (!validationResult.Success)
+            if (!validationResult.IsSuccess)
             {
                 throw new ApplicationException($"Invalid {nameof(SmtpEmailSenderOptions)}: {validationResult.MessagesToString()}");
             }

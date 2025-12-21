@@ -16,7 +16,7 @@ namespace Odin.Cryptography
         /// <returns></returns>
         public ResultValue<string?> TryDecrypt(string protectedString)
         {
-            return ResultValue<string?>.Succeed(protectedString);
+            return ResultValue<string?>.Success(protectedString);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Odin.Cryptography
         /// <returns></returns>
         public ResultValue<string?> TryEncrypt(string unProtectedString)
         {
-            return ResultValue<string?>.Succeed(unProtectedString);
+            return ResultValue<string?>.Success(unProtectedString);
         }
 
         /// <summary>

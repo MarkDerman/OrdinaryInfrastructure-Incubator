@@ -60,9 +60,9 @@ public abstract class RecordEnum<TEnum, TMember> where TEnum: RecordEnum<TEnum,T
     {
         if (!Values.Contains(value))
         {
-            return Result.Fail(NotAMemberMessage(value));
+            return Result.Failure(NotAMemberMessage(value));
         }
-        return Result.Succeed();
+        return Result.Success();
     }
 
     private static string NotAMemberMessage(RecordEnum<TEnum,TMember>? value) =>

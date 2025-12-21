@@ -54,7 +54,7 @@ public class QueuedEmailSender(IEmailSender emailSender, ILoggerWrapper<QueuedEm
         try
         {
             ResultValue<string?> outcome = await emailSender.SendEmail(email);
-            if (!outcome.Success)
+            if (!outcome.IsSuccess)
             {
                 throw new Exception(outcome.MessagesToString());
             }

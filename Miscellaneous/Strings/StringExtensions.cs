@@ -16,7 +16,7 @@ namespace Odin.Strings
         /// <returns></returns>
         public static string? Truncate(this string? aString, int maxLength, bool trimSpaces = true)
         {
-            PreCondition.Requires<ArgumentException>(maxLength>=0, "maxLength must be non-negative");
+            Precondition.Requires<ArgumentException>(maxLength>=0, "maxLength must be non-negative");
             if (aString == null) return null;
             if (trimSpaces)
             {

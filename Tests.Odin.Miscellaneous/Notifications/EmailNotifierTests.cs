@@ -58,7 +58,7 @@
 //                 .WithNotifierOptionsFromConfiguration(AppFactory.GetConfiguration());
 //             
 //             scenario.EmailSenderMock.Setup(c => c.SendEmail(It.IsAny<IEmailMessage>()))
-//                 .ReturnsAsync(ResultValue<string>.Succeed("12345"));
+//                 .ReturnsAsync(ResultValue<string>.Success("12345"));
 //             EmailNotifier sut = scenario.Build();
 //
 //             Result outcome1 = await sut.SendNotification("Subject");
