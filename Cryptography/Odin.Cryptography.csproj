@@ -17,6 +17,6 @@
     <PackageReference Include="Odin.Logging" Version="0.9.11" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.png" Pack="true" PackagePath="" />
+    <None Include="../Assets/icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>

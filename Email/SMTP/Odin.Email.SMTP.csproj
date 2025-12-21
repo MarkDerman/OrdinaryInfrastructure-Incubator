@@ -4,10 +4,14 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <RootNamespace>Odin.Email</RootNamespace>
+    <PackageIcon>icon.png</PackageIcon>
     <!-- <WarningsAsErrors>1591;1573;</WarningsAsErrors>  Not to be removed. Documentation is required. -->
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Odin.Email" Version="0.9.11" />
     <PackageReference Include="Odin.Logging" Version="0.9.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../Assets/icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
